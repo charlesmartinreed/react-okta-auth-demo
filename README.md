@@ -1,3 +1,9 @@
+## KNOWN ISSUES
+
+There appears to be an issue with gracefully logging out using the Okta widget when the user's browser does not support storing cookies. It is currently unfixed in this demo application.
+
+All apologies.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

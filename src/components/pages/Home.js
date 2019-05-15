@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { withAuth } from "@okta/okta-react";
 
 // withAuth is a wrapper where we export using our component class - think Redux and connect where you return a function/component
@@ -29,7 +29,10 @@ export default withAuth(
     };
 
     logout = async () => {
-      this.props.auth.logout("/");
+      this.props.auth
+        .logout("/")
+        .then(() => console.log("logout triggered"))
+        .catch(() => <Redirect to="/" />);
     };
 
     render() {
